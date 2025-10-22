@@ -17,7 +17,7 @@ def get_driver(): #función para que los servicios se actualicen solos
     # options.add_argument('--start-maximized')
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
-    time.sleep(5)
+    time.sleep(3)
 
     return driver
 
@@ -28,6 +28,6 @@ def login_saucedemo(driver):
     driver.find_element(By.NAME,"password").send_keys(password)
     driver.find_element(By.ID,'login-button').click()
 
-    time.sleep(5)
+    time.sleep(3)
 
     

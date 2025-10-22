@@ -21,7 +21,13 @@ def test_login(driver):
     titulo =  driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
     assert titulo == 'Products'
 
-def test_carrito(driver):
+def test_catalogo(driver):
     login_saucedemo(driver)
-    products = driver.find_element(By.CLASS_NAME, 'inventory_item')
-    assert len(products) > 0 #verifica que tenga contenido
+    products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
+    assert len(products) > 0 #verifica que existan productos
+
+def test_carrito(driver):
+    login_saucedemo()
+    products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
+    total_products = len(products)
+    products[0].find_elements(By.TAG_NAME, 'button').click()
