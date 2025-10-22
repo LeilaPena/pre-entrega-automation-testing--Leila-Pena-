@@ -10,11 +10,11 @@ URL = 'https://www.saucedemo.com/'
 username = "standard_user"
 password = "secret_sauce"
 
-#función para que los servicios se actualicen solos
-def get_driver():
 
+def get_driver(): #función para que los servicios se actualicen solos
     #Comienza con la pestaña en pantalla completa
-    # options = Options().add_argument('--start-maximized')
+    # options = Options
+    # options.add_argument('--start-maximized')
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     time.sleep(5)
