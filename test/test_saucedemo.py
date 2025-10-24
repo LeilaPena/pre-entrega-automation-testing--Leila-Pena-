@@ -2,7 +2,6 @@ import pytest
 import sys
 import os
 from selenium.webdriver.common.by import By
-import time
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 
 from utils.helpers import login_saucedemo, get_driver
@@ -36,6 +35,5 @@ def test_carrito(driver):
         products[0].find_element(By.TAG_NAME,'button').click()
         products[1].find_element(By.TAG_NAME,'button').click()
 
-        time.sleep(5)
         badge = driver.find_element(By.CLASS_NAME,'shopping_cart_badge').text
         assert badge == '2'
