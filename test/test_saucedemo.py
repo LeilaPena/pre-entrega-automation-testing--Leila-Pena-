@@ -17,14 +17,16 @@ def driver():
 def test_login(driver):
     login_saucedemo(driver)
 
-    assert "/inventory.html" in driver.current_url #saber en que página estoy
+    assert "/inventory.html" in driver.current_url #verifica que este en la url correcta
     titulo =  driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
-    assert titulo == 'Products'
+    assert titulo == 'Products' #verifica que el titulo contenga "Products"
 
 def test_catalogo(driver):
     login_saucedemo(driver)
     products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
     assert len(products) > 0 #verifica que existan productos
+    titulo = driver.find_element(By.CSS_SELECTOR, '#item_4_title_link .inventory_item_name').text
+    assert titulo == 'Sauce Labs Backpack' #Verifica nombre del primero.
 
 def test_carrito(driver):
     login_saucedemo(driver)
@@ -32,8 +34,8 @@ def test_carrito(driver):
     total_products = len(products)
 
     if total_products >= 2:
-        products[0].find_element(By.TAG_NAME,'button').click()
-        products[1].find_element(By.TAG_NAME,'button').click()
+        products[0].find_element(By.TAG_NAME,'button').click() #agrega item al carrito
+        products[1].find_element(By.TAG_NAME,'button').click() #agrega item al carrito
 
         badge = driver.find_element(By.CLASS_NAME,'shopping_cart_badge').text
-        assert badge == '2'
+        assert badge == '2' #Verifica items en carrito

@@ -1,9 +1,16 @@
-Archivo README.md que incluya:
+Propósito del proyecto:  Aplicar los conocimientos adquiridos durante las 8 clases al crear pruebas automatizadas para testear el sitio "https://www.saucedemo.com"
 
-Propósito del proyecto
+Tecnologías utilizadas:
+- Python como lenguaje principal
+- Pytest para estructura de testing
+- Selenium WebDriver para automatización
+- Git y GitHub para control de versiones
 
-Tecnologías utilizadas
+Comando de instalación de dependencias
+pip install selenium pytest pytest-html webdriver-manager
 
-Instrucciones de instalación de dependencias
+Comando de ejecución de tests
+pytest -v
 
-Comando para ejecutar las pruebas (por ejemplo: pytest -v --html=reporte.html)
+Comando para ejecutar las pruebas 
+pytest -v --html=reports/reporte.html
