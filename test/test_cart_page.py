@@ -1,8 +1,6 @@
-import pytest
 from page.login_page import LoginPage
 from page.inventory_page import InventoryPage
 from page.cart_page import CartPage
-import time
 
 
 def test_cart_operations(driver):
