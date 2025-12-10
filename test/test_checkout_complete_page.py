@@ -1,3 +1,4 @@
+import pytest
 from page.login_page import LoginPage
 from page.inventory_page import InventoryPage
 from page.cart_page import CartPage
@@ -15,7 +16,7 @@ def test_complete_purchase_flow(driver):
     login.open()
     login.login("standard_user", "secret_sauce")
 
-    time.sleep(4)
+    time.sleep(3)
     
     inventory.add_product_to_cart(0)
     inventory.go_to_cart()
