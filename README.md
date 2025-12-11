@@ -1,20 +1,54 @@
-**Propósito del proyecto:**  
-Aplicar los conocimientos adquiridos durante las 8 clases al crear pruebas automatizadas para testear el sitio "https://www.saucedemo.com"
+# Proyecto Final Automation Testing - Leila Peña
 
-**Tecnologías utilizadas:**
-* Python como lenguaje principal
-* Pytest para estructura de testing
-* Selenium WebDriver para automatización
-* Git y GitHub para control de versiones
+Este proyecto es un framework de automatización de pruebas que utiliza Selenium WebDriver para pruebas de interfaz de usuario (UI) en el sitio web de demostración [Saucedemo](www.saucedemo.com) y la biblioteca Requests para pruebas de API en [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
 
-**Comando de instalación de dependencias**
+El objetivo principal es demostrar la implementación de buenas prácticas de testing, como el patrón Page Object Model (POM), la parametrización de datos y la generación de reportes detallados.
 
-pip install selenium pytest pytest-html webdriver-manager
+## 🚀 Tecnologías Utilizadas
 
-**Comando de ejecución de tests**
+*   **Lenguaje de Programación:** Python
+*   **Framework de Testing:** Pytest
+*   **Automatización UI:** Selenium WebDriver
+*   **Gestión de Drivers:** `webdriver-manager`
+*   **Pruebas de API:** Requests
+*   **Reportes:** `pytest-html`
+*   **Control de Versiones:** Git y GitHub
 
-pytest -v
+## 📁 Estructura del Proyecto
 
-**Comando para ejecutar el reporte** 
+proyecto-final-automation-testing--Leila-Pena-/
+├── page/ # Clases que representan las páginas web (POM)
+├── test/ # Casos de pruebas de Interfaz de Usuario (Selenium)
+├── test-api/ # Casos de pruebas de pruebas de API (Requests)
+├── utils/ # Funciones de utilidad (lectura de datos, logging, etc.)
+├── data/ # Archivos externos de datos de prueba (CSV, JSON)
+├── logs/ # Logs de las pruebas de API
+├── pytest.ini # Archivo de configuración de Pytest
+├── report.html # Reportes de las pruebas UI
+└── README.md # Documentación del proyecto
 
-pytest -v --html=reports/reporte.html
+¿Cómo Instalar las Dependencias?
+
+1.  Clona el repositorio en tu máquina local.
+2.  Navega a la carpeta raíz del proyecto.
+3.  Instala las dependencias con este comando`: pip install pytest
+selenium requests pytest-html webdriver-manager faker
+
+
+## 🏃 ¿Cómo Ejecutar las Pruebas?
+
+Asegúrate de tener el entorno virtual activado y estar en la raíz del proyecto.
+
+### Ejecutar todas las pruebas (UI y API)
+
+```bash
+pytest
+
+Ejecutar solo las pruebas de UI
+pytest test
+
+Ejecutar solo las pruebas de API
+pytest test-api
+
+Ejecutar pruebas y generar reporte HTML
+pytest --html=reportes/reporte_final.html
