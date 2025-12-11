@@ -1,0 +1,18 @@
+22:22:16 INFO root - 
+=== Test 1: GET Posts===
+22:22:17 INFO root - C�digo de estado 200
+22:22:17 INFO root - Estructura JSON correcta
+22:22:17 INFO root - Estructura del post correcta
+22:22:17 INFO root - Tipos de datos correctos
+22:22:17 INFO root - Metodo GET completado exitosamente
+22:22:17 INFO root - 
+=== Test 2: POST post===
+22:22:17 INFO root - C�digo de estado 201
+22:22:17 INFO root - Estructura correcta
+22:22:17 INFO root - Datos guardados correctamente, ID asignado corrrectamente
+22:22:17 INFO root - Metodo POST completado exitosamente
+22:22:17 INFO root - 
+=== Test 3: DELETE post===
+22:22:18 INFO root - C�digo de estado 200
+22:22:18 INFO root - Respuesta DELETE correcta
+22:22:18 INFO root - Metodo DELETE completado exitosamente
