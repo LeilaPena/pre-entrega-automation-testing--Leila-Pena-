@@ -8,9 +8,9 @@ class LoginPage:
     campo_username = (By.NAME, 'user-name')
     campo_password = (By.NAME, 'password')
     login_button = (By.NAME, 'login-button')
+    
     def __init__(self,  driver):
         self.driver = driver
-
     def open (self):
         self.driver.get(URL)
 

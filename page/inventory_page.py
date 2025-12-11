@@ -14,19 +14,23 @@ class InventoryPage:
     def __init__(self , driver):
         self.driver = driver
 
+    #verificar que esté en el inventorio
     def is_at_page( self ):
         return self.URL_CURRENT in self.driver.current_url
     
+    #agregar producto al carro
     def add_product_to_cart(self, product_index=0):
         add_buttons = self.driver.find_elements(*self.ADD_TO_CART_BUTTON)
         if add_buttons and product_index < len(add_buttons):
             add_buttons[product_index].click()
 
+    #ir al carro
     def go_to_cart(self):
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.CART_LINK)
         ).click()
     
+    #desloggearse
     def logout( self ):
         self.driver.find_element(*self.MENU_BUTTON).click()
         time.sleep(5)

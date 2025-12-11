@@ -10,11 +10,12 @@ class CartPage:
     remove_button = (By.XPATH, "//button[contains(text(), 'Remove')]")
     cart_badge = (By.CLASS_NAME, 'shopping_cart_badge')
     
-
+     #iniciar el driver
     def __init__(self, driver):
         self.driver = driver
         driver.implicitly_wait(5)
 
+     #verificar que esté en el link del carrito
     def is_at_page(self):
          return self.current_URL in self.driver.current_url
     
@@ -28,6 +29,7 @@ class CartPage:
          items =  self.driver.find_elements(*self.cart_item)
          return len(items)
     
+    #Eliminar item del carrito
     def remove_item(self, item_index=0):
         remove_buttons = self.driver.find_elements(*self.remove_button)
         if remove_buttons and item_index < len(remove_buttons):

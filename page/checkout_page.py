@@ -13,6 +13,7 @@ class CheckoutPage:
     def __init__(self, driver):
         self.driver = driver
 
+    #verificar que esté en el link del checkout
     def is_at_page(self):
         return '/checkout-step-one.html' in self.driver.current_url
 
@@ -28,7 +29,8 @@ class CheckoutPage:
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.continue_button)
         ).click()
-        
+
+    #cancelar compra
     def cancel_checkout(self):
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.cancel_button)

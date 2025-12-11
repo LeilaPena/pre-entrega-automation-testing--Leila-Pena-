@@ -2,16 +2,19 @@ from page.login_page import LoginPage
 from page.inventory_page import InventoryPage
 from page.cart_page import CartPage
 
-
+#función para probar el carrito
 def test_cart_operations(driver):
     login = LoginPage(driver)
     inventory = InventoryPage(driver)
     cart = CartPage(driver)
 
     login.open()
+    #información para loggearse
     login.login("standard_user", "secret_sauce")
     
+    #agregar productos
     inventory.add_product_to_cart(0)
+    #ver el carrito
     inventory.go_to_cart()
     
     assert cart.is_at_page()
@@ -20,15 +23,20 @@ def test_cart_operations(driver):
     cart.continue_shopping()
     assert inventory.is_at_page()
 
+#función para eliminar un item del carrito<            
 def test_remove_from_cart(driver):
     login = LoginPage(driver)
     inventory = InventoryPage(driver)
     cart = CartPage(driver)
 
     login.open()
+
+    #información para loggearse
     login.login("standard_user", "secret_sauce")
     
+    #agregar productos
     inventory.add_product_to_cart(0)
+    #ver el carrito
     inventory.go_to_cart()
     
     initial_count = cart.get_cart_items_count()

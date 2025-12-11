@@ -12,9 +12,11 @@ class CheckoutCompletePage:
     def __init__(self, driver):
         self.driver = driver
 
+     #verificar que esté en el link del carrito
     def is_at_page(self):
         return self.URL_CURRENT in self.driver.current_url
 
+    #verificar que llegue el mensaje de éxito
     def get_success_message(self):
         try:
             return self.driver.find_element(*self.SUCCESS_MESSAGE).text
@@ -27,6 +29,7 @@ class CheckoutCompletePage:
         except:
             return ""
 
+    #volver a la página principal
     def back_to_home(self):
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.BACK_HOME_BUTTON)

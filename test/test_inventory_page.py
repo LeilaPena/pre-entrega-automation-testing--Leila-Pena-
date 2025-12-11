@@ -1,12 +1,12 @@
 from page.login_page import LoginPage
 from page.inventory_page import InventoryPage
-import time
 
+#Verificar inventario
 def test_inventory( driver ):
     login = LoginPage(driver)
     inventory = InventoryPage(driver)
-
     login.open()
+    #información para loggearse
     login.login("standard_user", "secret_sauce")
     inventory.is_at_page()
     inventory.logout()
